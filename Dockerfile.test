@@ -30,4 +30,4 @@ ENV DISPLAY=:99
 
 # Command to run on container start
 #CMD ["python", "./test_html_elements.py"]
-CMD ["/bin/slee", "30000"]
+CMD ["/bin/sleep", "30000"]
