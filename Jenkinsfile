@@ -61,7 +61,9 @@ pipeline {
                     sh 'docker stop qa-tests || true'
                     sh 'docker rm qa-tests || true'
                     sh 'docker build -t qa-tests -f Dockerfile.test .'
-                    sh 'docker run --dns=10.43.0.10 qa-tests'
+                    // sh 'docker run --dns=10.43.0.10 qa-tests'
+                    sh 'kubectl run qa-tests --image=qa-tests --restart=Never --rm --attach'
+
                 }
             }
         }
