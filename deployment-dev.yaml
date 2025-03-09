@@ -40,11 +40,10 @@ kind: Service
 metadata:
   name: dev-service
 spec:
-  type: LoadBalancer 
-  loadBalancerIP: 10.48.10.133                                     # <-----change this!!!!
+  selector:
+    app: nginx
   ports:
   - protocol: TCP
     port: 80
-    targetPort: 8080
-  selector:
-    app: nginx
+    targetPort: 80
+
